@@ -73,7 +73,7 @@
       <DA name="d" bType="VisString255" fc="DC"/>
     </DOType>
     <DOType cdc="DPC" id="OpenSCD_DPC">
-      <DA name="origin" bType="Enum" dchg="true" fc="ST" type="OpenSCD_Originator"/>
+      <DA name="origin" bType="Struct" dchg="true" fc="ST" type="OpenSCD_Originator"/>
       <DA name="stVal" bType="Enum" dchg="true" fc="ST" type="BehaviourModeKind"/>
       <DA name="q" bType="Quality" qchg="true" fc="ST"/>
       <DA name="t" bType="Timestamp" fc="ST"/>
@@ -103,7 +103,7 @@
       <DA name="t" bType="Timestamp" fc="ST"/>
     </DOType>
     <DOType cdc="ENC" id="OpenSCD_ENCMod">
-      <DA name="origin" bType="Enum" dchg="true" fc="ST" type="OpenSCD_Originator"/>
+      <DA name="origin" bType="Struct" dchg="true" fc="ST" type="OpenSCD_Originator"/>
       <DA name="stVal" bType="Enum" dchg="true" fc="ST" type="BehaviourModeKind"/>
       <DA name="q" bType="Quality" qchg="true" fc="ST"/>
       <DA name="t" bType="Timestamp" fc="ST"/>
@@ -143,7 +143,7 @@
     </DOType>
     <DOType cdc="SEC" id="OpenSCD_SEC">
       <DA name="cnt" bType="INT32U" dchg="true" fc="ST"/>
-      <DA name="q" bType="Enum" fc="ST" type="SeverityKind"/>
+      <DA name="sev" bType="Enum" fc="ST" type="SeverityKind"/>
       <DA name="t" bType="Timestamp" fc="ST" />
     </DOType>
     <DOType cdc="BCR" id="OpenSCD_BCR">
@@ -246,13 +246,6 @@
     <DAType id="OpenSCD_VectorIwithAngle">
       <BDA name="mag" bType="Struct" type="OpenSCD_AnalogueValueInteger32"/>
       <BDA name="ang" bType="Struct" type="OpenSCD_AnalogueValueInteger32"/>
-    </DAType>
-    <DAType id="OpenSCD_VectorFwoAngle">
-      <BDA name="mag" bType="Struct" type="OpenSCD_AnalogueValueFloat32"/>
-      <BDA name="ang" bType="Struct" type="OpenSCD_AnalogueValueInteger32"/>
-    </DAType>
-    <DAType id="OpenSCD_VectorIwithAngle">
-      <BDA name="mag" bType="Struct" type="OpenSCD_AnalogueValueInteger32"/>
     </DAType>
     <DAType id="OpenSCD_VectorFwoAngle">
       <BDA name="mag" bType="Struct" type="OpenSCD_AnalogueValueFloat32"/>
