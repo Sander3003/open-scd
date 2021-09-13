@@ -266,7 +266,6 @@ export function newLogEvent(
 
 export interface IssueDetail extends LogDetailBase {
   validatorId: string;
-  statusNumber: number;
 }
 export type IssueEvent = CustomEvent<IssueDetail>;
 export function newIssueEvent(
@@ -309,19 +308,15 @@ export function newPendingStateEvent(
 }
 
 /** Represents a request for validation. */
-export interface ValidateDetail {
-  identity: string;
-}
-export type ValidateEvent = CustomEvent<ValidateDetail>;
+
+export type ValidateEvent = CustomEvent<void>;
 export function newValidateEvent(
-  identity = '',
-  eventInitDict?: CustomEventInit<Partial<ValidateDetail>>
+  eventInitDict?: CustomEventInit<void>
 ): ValidateEvent {
-  return new CustomEvent<ValidateDetail>('validate', {
+  return new CustomEvent<void>('validate', {
     bubbles: true,
     composed: true,
     ...eventInitDict,
-    detail: { identity, ...eventInitDict?.detail },
   });
 }
 
