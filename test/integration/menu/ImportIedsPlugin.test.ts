@@ -193,11 +193,12 @@ describe('ImportIedsPlugin', () => {
     });
 
     it('throws missing ied elements error', async () => {
+      await new Promise(resolve => setTimeout(resolve, 100)); // await translation switch
+
       importDoc = await fetch('/base/test/testfiles/importieds/invalid.iid')
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       element.prepareImport(importDoc, doc);
-      await element.updateComplete;
 
       expect(parent.history[0].kind).to.equal('error');
       expect(parent.history[0].title).to.equal('[import.log.missingied]');
@@ -207,7 +208,6 @@ describe('ImportIedsPlugin', () => {
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       element.prepareImport(importDoc, doc);
-      await element.updateComplete;
 
       expect(parent.history[0].kind).to.equal('error');
       expect(parent.history[0].title).to.equal('[import.log.nouniqueied]');
@@ -217,7 +217,6 @@ describe('ImportIedsPlugin', () => {
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       element.prepareImport(importDoc, doc);
-      await element.updateComplete;
 
       expect(parent.history[0].kind).to.equal('error');
       expect(parent.history[0].title).to.equal('[import.log.parsererror]');
