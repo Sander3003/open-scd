@@ -1,8 +1,8 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import Communication from '../../../../src/editors/Communication.js';
-import { Editing } from '../../../../src/Editing.js';
-import { Wizarding, WizardingElement } from '../../../../src/Wizarding.js';
+import Communication from '../../../src/editors/Communication.js';
+import { Editing } from '../../../src/Editing.js';
+import { Wizarding, WizardingElement } from '../../../src/Wizarding.js';
 
 describe('Communication Plugin', () => {
   customElements.define(

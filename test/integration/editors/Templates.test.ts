@@ -1,8 +1,8 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import TemplatesPlugin from '../../../../src/editors/Templates.js';
-import { Editing, EditingElement } from '../../../../src/Editing.js';
-import { Wizarding, WizardingElement } from '../../../../src/Wizarding.js';
+import TemplatesPlugin from '../../../src/editors/Templates.js';
+import { Editing, EditingElement } from '../../../src/Editing.js';
+import { Wizarding, WizardingElement } from '../../../src/Wizarding.js';
 
 describe('Templates Plugin', () => {
   customElements.define(
