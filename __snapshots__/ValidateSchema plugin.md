@@ -6,7 +6,7 @@
 
 ```html
 <mwc-dialog
-  heading="Diagnostics"
+  heading="[diag.name]"
   id="diagnostic"
 >
   <filtered-list
@@ -21,7 +21,7 @@
       tabindex="0"
     >
       <span>
-        Issues found during validation will show up here
+        [diag.placeholder]
       </span>
       <mwc-icon slot="graphic">
         info
@@ -32,7 +32,7 @@
     dialogaction="close"
     slot="primaryAction"
   >
-    Close
+    [close]
   </mwc-button>
 </mwc-dialog>
 
@@ -44,7 +44,7 @@
 
 ```html
 <mwc-dialog
-  heading="Diagnostics"
+  heading="[diag.name]"
   id="diagnostic"
 >
   <filtered-list
@@ -101,7 +101,7 @@ invalid2007B:7 Substation key identity-constraint '{http://www.iec.ch/61850/2003
     dialogaction="close"
     slot="primaryAction"
   >
-    Close
+    [close]
   </mwc-button>
 </mwc-dialog>
 

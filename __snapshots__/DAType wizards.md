@@ -159,38 +159,6 @@
           VectorFwoAngle
         </span>
         <span slot="meta">
-          2
-        </span>
-      </mwc-list-item>
-      <mwc-list-item
-        aria-disabled="false"
-        graphic="icon"
-        hasmeta=""
-        mwc-list-item=""
-        role="option"
-        tabindex="-1"
-        value="OpenSCD_VectorIwithAngle"
-      >
-        <span>
-          VectorIwithAngle
-        </span>
-        <span slot="meta">
-          1
-        </span>
-      </mwc-list-item>
-      <mwc-list-item
-        aria-disabled="false"
-        graphic="icon"
-        hasmeta=""
-        mwc-list-item=""
-        role="option"
-        tabindex="-1"
-        value="OpenSCD_VectorFwoAngle"
-      >
-        <span>
-          VectorFwoAngle
-        </span>
-        <span slot="meta">
           1
         </span>
       </mwc-list-item>

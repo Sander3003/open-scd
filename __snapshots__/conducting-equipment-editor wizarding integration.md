@@ -5,15 +5,15 @@
 ```html
 <mwc-dialog
   defaultaction="close"
-  heading="Edit conducting equipment"
+  heading="[conductingequipment.wizard.title.edit]"
   open=""
 >
   <div id="wizard-content">
     <mwc-select
       disabled=""
-      helper="Conducting equipment type"
+      helper="[conductingequipment.wizard.typeHelper]"
       label="type"
-      validationmessage="Required"
+      validationmessage="[textfield.required]"
     >
       <mwc-list-item
         aria-disabled="false"
@@ -27,14 +27,14 @@
     </mwc-select>
     <wizard-textfield
       dialoginitialfocus=""
-      helper="Conducting equipment name"
+      helper="[conductingequipment.wizard.nameHelper]"
       label="name"
       required=""
-      validationmessage="Required"
+      validationmessage="[textfield.required]"
     >
     </wizard-textfield>
     <wizard-textfield
-      helper="Conducting equipment description"
+      helper="[conductingequipment.wizard.descHelper]"
       label="desc"
       nullable=""
     >
@@ -42,7 +42,7 @@
   </div>
   <mwc-button
     dialogaction="close"
-    label="Cancel"
+    label="[cancel]"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
@@ -50,7 +50,7 @@
   <mwc-button
     dialoginitialfocus=""
     icon="edit"
-    label="Save"
+    label="[save]"
     slot="primaryAction"
     trailingicon=""
   >

@@ -179,8 +179,9 @@ describe('ImportIedsPlugin', () => {
 
     beforeEach(async () => {
       parent = await fixture(
-        html`<open-scd><import-ieds-plugin></import-ieds-plugin></open-scd>>`
+        html`<open-scd><import-ieds-plugin></import-ieds-plugin></open-scd>`
       );
+      localStorage.setItem('language', 'none');
 
       element = <ImportingIedPlugin>parent.querySelector('import-ieds-plugin')!;
 
@@ -198,7 +199,7 @@ describe('ImportIedsPlugin', () => {
       element.prepareImport(importDoc, doc);
 
       expect(parent.history[0].kind).to.equal('error');
-      expect(parent.history[0].title).to.equal('No IED element in the file');
+      expect(parent.history[0].title).to.equal('[import.log.missingied]');
     });
     it('throws duplicate ied name error', async () => {
       importDoc = await fetch('/base/test/testfiles/importieds/dublicate.iid')
@@ -207,9 +208,7 @@ describe('ImportIedsPlugin', () => {
       element.prepareImport(importDoc, doc);
 
       expect(parent.history[0].kind).to.equal('error');
-      expect(parent.history[0].title).to.equal(
-        'IED element IED2 already in the file'
-      );
+      expect(parent.history[0].title).to.equal('[import.log.nouniqueied]');
     });
     it('throws parser error', async () => {
       importDoc = await fetch('/base/test/testfiles/importieds/parsererror.iid')
@@ -218,7 +217,7 @@ describe('ImportIedsPlugin', () => {
       element.prepareImport(importDoc, doc);
 
       expect(parent.history[0].kind).to.equal('error');
-      expect(parent.history[0].title).to.equal('Parser error');
+      expect(parent.history[0].title).to.equal('[import.log.parsererror]');
     });
   });
 });

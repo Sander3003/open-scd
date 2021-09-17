@@ -10,7 +10,7 @@
   type="modal"
 >
   <span slot="title">
-    Menu
+    [menu.title]
   </span>
   <mwc-list wrapfocus="">
     <li
@@ -31,7 +31,7 @@
         folder_open
       </mwc-icon>
       <span>
-        Open project
+        [Open project]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -48,7 +48,7 @@
         create_new_folder
       </mwc-icon>
       <span>
-        New project
+        [New project]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -66,7 +66,7 @@
         save
       </mwc-icon>
       <span>
-        Save project
+        [Save project]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -90,7 +90,7 @@
         undo
       </mwc-icon>
       <span>
-        Undo
+        [undo]
       </span>
     </mwc-list-item>
     <mwc-list-item
@@ -106,7 +106,7 @@
         redo
       </mwc-icon>
       <span>
-        Redo
+        [redo]
       </span>
     </mwc-list-item>
     <mwc-list-item
@@ -122,7 +122,7 @@
         rule_folder
       </mwc-icon>
       <span>
-        Validate project
+        [Validate project]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -140,7 +140,7 @@
         rule_folder
       </mwc-icon>
       <span>
-        Validate Templates
+        [Validate Templates]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -157,7 +157,7 @@
         history
       </mwc-icon>
       <span>
-        View log
+        [menu.viewLog]
       </span>
     </mwc-list-item>
     <mwc-list-item
@@ -172,7 +172,7 @@
         rule
       </mwc-icon>
       <span>
-        View diagnostics
+        [menu.viewDiag]
       </span>
     </mwc-list-item>
     <li
@@ -194,7 +194,7 @@
         snippet_folder
       </mwc-icon>
       <span>
-        Import IEDs
+        [Import IEDs]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -212,7 +212,7 @@
         play_circle
       </mwc-icon>
       <span>
-        Subscriber Update
+        [Subscriber Update]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -230,7 +230,7 @@
         merge_type
       </mwc-icon>
       <span>
-        Merge Project
+        [Merge Project]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -248,7 +248,7 @@
         merge_type
       </mwc-icon>
       <span>
-        Update Substation
+        [Update Substation]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -271,7 +271,7 @@
         settings
       </mwc-icon>
       <span>
-        Settings
+        [settings.title]
       </span>
     </mwc-list-item>
     <mwc-list-item
@@ -286,7 +286,7 @@
         help
       </mwc-icon>
       <span>
-        Help
+        [Help]
       </span>
       <mwc-linear-progress indeterminate="">
       </mwc-linear-progress>
@@ -309,7 +309,7 @@
         extension
       </mwc-icon>
       <span>
-        Extensions
+        [plugins.heading]
       </span>
     </mwc-list-item>
   </mwc-list>
@@ -372,7 +372,7 @@
   </mwc-icon-button>
 </div>
 <mwc-dialog
-  heading="Log"
+  heading="[log.name]"
   id="log"
 >
   <mwc-icon-button-toggle
@@ -407,7 +407,7 @@
       tabindex="0"
     >
       <span>
-        Edits, errors, and other notifications will show up here.
+        [log.placeholder]
       </span>
       <mwc-icon slot="graphic">
         info
@@ -417,14 +417,14 @@
   <mwc-button
     disabled=""
     icon="undo"
-    label="Undo"
+    label="[undo]"
     slot="secondaryAction"
   >
   </mwc-button>
   <mwc-button
     disabled=""
     icon="redo"
-    label="Redo"
+    label="[redo]"
     slot="secondaryAction"
   >
   </mwc-button>
@@ -432,11 +432,11 @@
     dialogaction="close"
     slot="primaryAction"
   >
-    Close
+    [close]
   </mwc-button>
 </mwc-dialog>
 <mwc-dialog
-  heading="Diagnostics"
+  heading="[diag.name]"
   id="diagnostic"
 >
   <filtered-list
@@ -451,7 +451,7 @@
       tabindex="0"
     >
       <span>
-        Issues found during validation will show up here
+        [diag.placeholder]
       </span>
       <mwc-icon slot="graphic">
         info
@@ -462,12 +462,12 @@
     dialogaction="close"
     slot="primaryAction"
   >
-    Close
+    [close]
   </mwc-button>
 </mwc-dialog>
 <mwc-snackbar
   id="info"
-  labeltext="No errors"
+  labeltext="[log.snackbar.placeholder]"
   timeoutms="4000"
 >
   <mwc-icon-button
@@ -478,14 +478,14 @@
 </mwc-snackbar>
 <mwc-snackbar
   id="warning"
-  labeltext="No errors"
+  labeltext="[log.snackbar.placeholder]"
   timeoutms="6000"
 >
   <mwc-button
     icon="history"
     slot="action"
   >
-    Show
+    [log.snackbar.show]
   </mwc-button>
   <mwc-icon-button
     icon="close"
@@ -495,14 +495,14 @@
 </mwc-snackbar>
 <mwc-snackbar
   id="error"
-  labeltext="No errors"
+  labeltext="[log.snackbar.placeholder]"
   timeoutms="10000"
 >
   <mwc-button
     icon="history"
     slot="action"
   >
-    Show
+    [log.snackbar.show]
   </mwc-button>
   <mwc-icon-button
     icon="close"
@@ -512,14 +512,14 @@
 </mwc-snackbar>
 <mwc-snackbar
   id="issue"
-  labeltext="No errors"
+  labeltext="[log.snackbar.placeholder]"
   timeoutms="10000"
 >
   <mwc-button
     icon="rule"
     slot="action"
   >
-    Show
+    [log.snackbar.show]
   </mwc-button>
   <mwc-icon-button
     icon="close"
@@ -528,7 +528,7 @@
   </mwc-icon-button>
 </mwc-snackbar>
 <mwc-dialog
-  heading="Extensions"
+  heading="[plugins.heading]"
   id="pluginManager"
   stacked=""
 >
@@ -543,7 +543,7 @@
       tabindex="-1"
     >
       <strong>
-        Editor tab
+        [plugins.editor]
       </strong>
       <mwc-icon
         class="inverted"
@@ -612,7 +612,7 @@
       tabindex="-1"
     >
       <strong>
-        Menu entry
+        [plugins.menu]
       </strong>
       <mwc-icon
         class="inverted"
@@ -809,14 +809,14 @@
   </mwc-list>
   <mwc-button
     icon="refresh"
-    label="Reset"
+    label="[reset]"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
   </mwc-button>
   <mwc-button
     icon="library_add"
-    label="Add…"
+    label="[add]…"
     raised=""
     slot="primaryAction"
     trailingicon=""
@@ -824,18 +824,17 @@
   </mwc-button>
 </mwc-dialog>
 <mwc-dialog
-  heading="Add custom extension"
+  heading="[plugins.add.heading]"
   id="pluginAdd"
 >
   <div style="display: flex; flex-direction: column; row-gap: 8px;">
     <p style="color:var(--mdc-theme-error);">
-      Here you may add remote extensions directly from a custom URL.
-                You do this at your own risk.
+      [plugins.add.warning]
     </p>
     <mwc-textfield
-      helper="Your preferred extension name"
+      helper="[plugins.add.nameHelper]"
       id="pluginNameInput"
-      label="Name"
+      label="[plugins.add.name]"
       required=""
     >
     </mwc-textfield>
@@ -852,7 +851,7 @@
         tabindex="0"
         value="editor"
       >
-        Editor tab
+        [plugins.editor]
         <mwc-icon slot="meta">
           tab
         </mwc-icon>
@@ -867,7 +866,7 @@
         tabindex="-1"
         value="menu"
       >
-        Menu entry
+        [plugins.menu]
         <mwc-icon slot="meta">
           play_circle
         </mwc-icon>
@@ -875,7 +874,7 @@
       <div id="menudetails">
         <mwc-formfield
           id="enabledefault"
-          label="Requires loaded document"
+          label="[plugins.requireDoc]"
         >
           <mwc-switch
             checked=""
@@ -895,7 +894,7 @@
             tabindex="-1"
             value="top"
           >
-            top
+            [plugins.top]
           </mwc-list-item>
           <mwc-list-item
             activated=""
@@ -907,7 +906,7 @@
             tabindex="0"
             value="middle"
           >
-            middle
+            [plugins.middle]
           </mwc-list-item>
           <mwc-list-item
             aria-disabled="false"
@@ -916,7 +915,7 @@
             tabindex="-1"
             value="bottom"
           >
-            bottom
+            [plugins.bottom]
           </mwc-list-item>
         </mwc-select>
       </div>
@@ -930,16 +929,16 @@
         tabindex="-1"
         value="validator"
       >
-        Validator
+        [plugins.validator]
         <mwc-icon slot="meta">
           rule_folder
         </mwc-icon>
       </mwc-radio-list-item>
     </mwc-list>
     <mwc-textfield
-      helper="The vendor supplied extension URL"
+      helper="[plugins.add.srcHelper]"
       id="pluginSrcInput"
-      label="URL"
+      label="[plugins.add.src]"
       placeholder="http://example.com/plugin.js"
       required=""
       type="url"
@@ -948,13 +947,13 @@
   </div>
   <mwc-button
     dialogaction="close"
-    label="Cancel"
+    label="[cancel]"
     slot="secondaryAction"
   >
   </mwc-button>
   <mwc-button
     icon="add"
-    label="Add"
+    label="[add]"
     slot="primaryAction"
     trailingicon=""
   >
@@ -970,7 +969,7 @@
 <wizard-dialog>
 </wizard-dialog>
 <mwc-dialog
-  heading="Settings"
+  heading="[settings.title]"
   id="settings"
 >
   <form>
@@ -978,19 +977,17 @@
       fixedmenuposition=""
       icon="language"
       id="language"
-      label="Language"
+      label="[settings.language]"
     >
       <mwc-list-item
         aria-disabled="false"
-        aria-selected="true"
         graphic="icon"
         mwc-list-item=""
         role="option"
-        selected=""
         tabindex="0"
         value="en"
       >
-        English
+        [settings.languages.en]
       </mwc-list-item>
       <mwc-list-item
         aria-disabled="false"
@@ -1000,18 +997,18 @@
         tabindex="-1"
         value="de"
       >
-        German (Deutsch)
+        [settings.languages.de]
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
+    <mwc-formfield label="[settings.dark]">
       <mwc-switch id="dark">
       </mwc-switch>
     </mwc-formfield>
-    <mwc-formfield label="Pro mode">
+    <mwc-formfield label="[settings.mode]">
       <mwc-switch id="mode">
       </mwc-switch>
     </mwc-formfield>
-    <mwc-formfield label="Show IEDs in substation editor">
+    <mwc-formfield label="[settings.showieds]">
       <mwc-switch id="showieds">
       </mwc-switch>
     </mwc-formfield>
@@ -1020,14 +1017,14 @@
     dialogaction="close"
     slot="secondaryAction"
   >
-    Cancel
+    [cancel]
   </mwc-button>
   <mwc-button
     dialogaction="reset"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
-    Reset
+    [reset]
   </mwc-button>
   <mwc-button
     dialogaction="save"
@@ -1035,7 +1032,7 @@
     slot="primaryAction"
     trailingicon=""
   >
-    Save
+    [save]
   </mwc-button>
 </mwc-dialog>
 

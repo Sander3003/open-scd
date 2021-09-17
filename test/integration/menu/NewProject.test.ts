@@ -12,10 +12,14 @@ describe('NewProject loader', () => {
     parent = await fixture(html`
       <open-scd><new-project-plugin></new-project-plugin></open-scd>
 
-      <link href="public/google/fonts/roboto-v27.css" rel="stylesheet">
-      <link href="public/google/fonts/roboto-mono-v13.css" rel="stylesheet">
-      <link href="public/google/icons/material-icons-outlined.css" rel="stylesheet">
+      <link href="public/google/fonts/roboto-v27.css" rel="stylesheet" />
+      <link href="public/google/fonts/roboto-mono-v13.css" rel="stylesheet" />
+      <link
+        href="public/google/icons/material-icons-outlined.css"
+        rel="stylesheet"
+      />
     `);
+    localStorage.setItem('language', 'none');
 
     element = <NewProjectPlugin>parent.querySelector('new-project-plugin')!;
   });

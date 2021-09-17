@@ -2,16 +2,25 @@
 
 ## `defines a editDaWizard to edit an existing DA`
 
-#### `looks like the latest snapshot`
+####   `looks like the latest snapshot`
 
 ```html
-<mwc-dialog defaultaction="close" heading="Edit DA" open="">
+<mwc-dialog
+  defaultaction="close"
+  heading="[da.wizard.title.edit]"
+  open=""
+>
   <div id="wizard-content">
-    <mwc-button fullwidth="" icon="delete" label="Remove" trailingicon="">
+    <mwc-button
+      fullwidth=""
+      icon="delete"
+      label="[remove]"
+      trailingicon=""
+    >
     </mwc-button>
     <wizard-textfield
       dialoginitialfocus=""
-      helper="Name"
+      helper="[scl.name]"
       label="name"
       maxlength="60"
       pattern="((T)|(Test)|(Check)|(SIUnit)|(Open)|(SBO)|(SBOw)|(Cancel)|[a-z][0-9A-Za-z]*)"
@@ -21,7 +30,7 @@
     </wizard-textfield>
     <wizard-textfield
       disabled=""
-      helper="Description"
+      helper="[scl.desc]"
       label="desc"
       nullable=""
       pattern="([ -~]|[]|[ -퟿]|[-�]|[𐀀\-􏿿])*"
@@ -29,7 +38,7 @@
     </wizard-textfield>
     <wizard-select
       fixedmenuposition=""
-      helper="Basic type"
+      helper="[scl.bType]"
       label="bType"
       required=""
     >
@@ -352,7 +361,11 @@
         EntryID
       </mwc-list-item>
     </wizard-select>
-    <wizard-select fixedmenuposition="" helper="Type" label="type">
+    <wizard-select
+      fixedmenuposition=""
+      helper="[scl.type]"
+      label="type"
+    >
       <mwc-list-item
         aria-disabled="true"
         class="Struct"
@@ -503,7 +516,7 @@
     </wizard-select>
     <wizard-textfield
       disabled=""
-      helper="Short address"
+      helper="[scl.sAddr]"
       label="sAddr"
       nullable=""
       pattern="([ -~]|[]|[ -퟿]|[-�]|[𐀀\-􏿿])*"
@@ -512,7 +525,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Value kind"
+      helper="[scl.valKind]"
       label="valKind"
       nullable=""
       required=""
@@ -557,7 +570,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="valImport"
       nullable=""
       required=""
@@ -581,7 +594,12 @@
         false
       </mwc-list-item>
     </wizard-select>
-    <wizard-select disabled="" helper="Default value" label="Val" nullable="">
+    <wizard-select
+      disabled=""
+      helper="[scl.Val]"
+      label="Val"
+      nullable=""
+    >
       <mwc-list-item
         aria-disabled="false"
         aria-selected="false"
@@ -635,7 +653,7 @@
     </wizard-select>
     <wizard-textfield
       disabled=""
-      helper="Default value"
+      helper="[scl.Val]"
       label="Val"
       nullable=""
       style="display: none;"
@@ -643,7 +661,7 @@
     </wizard-textfield>
     <wizard-select
       fixedmenuposition=""
-      helper="Function contraint"
+      helper="[scl.fc]"
       label="fc"
       required=""
     >
@@ -771,7 +789,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="dchg"
       nullable=""
       required=""
@@ -798,7 +816,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="qchg"
       nullable=""
       required=""
@@ -825,7 +843,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="dupd"
       nullable=""
       required=""
@@ -852,7 +870,7 @@
   </div>
   <mwc-button
     dialogaction="close"
-    label="Cancel"
+    label="[cancel]"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
@@ -860,24 +878,29 @@
   <mwc-button
     dialoginitialfocus=""
     icon=""
-    label="Save"
+    label="[save]"
     slot="primaryAction"
     trailingicon=""
   >
   </mwc-button>
 </mwc-dialog>
+
 ```
 
 ## `defines a createDaWizard to create a new DA element`
 
-#### `looks like the latest snapshot`
+####   `looks like the latest snapshot`
 
 ```html
-<mwc-dialog defaultaction="close" heading="Edit DA" open="">
+<mwc-dialog
+  defaultaction="close"
+  heading="[da.wizard.title.edit]"
+  open=""
+>
   <div id="wizard-content">
     <wizard-textfield
       dialoginitialfocus=""
-      helper="Name"
+      helper="[scl.name]"
       label="name"
       maxlength="60"
       pattern="((T)|(Test)|(Check)|(SIUnit)|(Open)|(SBO)|(SBOw)|(Cancel)|[a-z][0-9A-Za-z]*)"
@@ -887,7 +910,7 @@
     </wizard-textfield>
     <wizard-textfield
       disabled=""
-      helper="Description"
+      helper="[scl.desc]"
       label="desc"
       nullable=""
       pattern="([ -~]|[]|[ -퟿]|[-�]|[𐀀\-􏿿])*"
@@ -895,7 +918,7 @@
     </wizard-textfield>
     <wizard-select
       fixedmenuposition=""
-      helper="Basic type"
+      helper="[scl.bType]"
       label="bType"
       required=""
     >
@@ -1215,7 +1238,11 @@
         EntryID
       </mwc-list-item>
     </wizard-select>
-    <wizard-select fixedmenuposition="" helper="Type" label="type">
+    <wizard-select
+      fixedmenuposition=""
+      helper="[scl.type]"
+      label="type"
+    >
       <mwc-list-item
         aria-disabled="false"
         class="Struct"
@@ -1349,7 +1376,7 @@
     </wizard-select>
     <wizard-textfield
       disabled=""
-      helper="Short address"
+      helper="[scl.sAddr]"
       label="sAddr"
       nullable=""
       pattern="([ -~]|[]|[ -퟿]|[-�]|[𐀀\-􏿿])*"
@@ -1358,7 +1385,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Value kind"
+      helper="[scl.valKind]"
       label="valKind"
       nullable=""
       required=""
@@ -1403,7 +1430,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="valImport"
       nullable=""
       required=""
@@ -1427,18 +1454,23 @@
         false
       </mwc-list-item>
     </wizard-select>
-    <wizard-select disabled="" helper="Default value" label="Val" nullable="">
+    <wizard-select
+      disabled=""
+      helper="[scl.Val]"
+      label="Val"
+      nullable=""
+    >
     </wizard-select>
     <wizard-textfield
       disabled=""
-      helper="Default value"
+      helper="[scl.Val]"
       label="Val"
       nullable=""
     >
     </wizard-textfield>
     <wizard-select
       fixedmenuposition=""
-      helper="Function contraint"
+      helper="[scl.fc]"
       label="fc"
       required=""
     >
@@ -1563,7 +1595,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="dchg"
       nullable=""
       required=""
@@ -1590,7 +1622,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="qchg"
       nullable=""
       required=""
@@ -1617,7 +1649,7 @@
     <wizard-select
       disabled=""
       fixedmenuposition=""
-      helper="Import value"
+      helper="[scl.valImport]"
       label="dupd"
       nullable=""
       required=""
@@ -1644,7 +1676,7 @@
   </div>
   <mwc-button
     dialogaction="close"
-    label="Cancel"
+    label="[cancel]"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
@@ -1652,10 +1684,12 @@
   <mwc-button
     dialoginitialfocus=""
     icon=""
-    label="Save"
+    label="[save]"
     slot="primaryAction"
     trailingicon=""
   >
   </mwc-button>
 </mwc-dialog>
+
 ```
+

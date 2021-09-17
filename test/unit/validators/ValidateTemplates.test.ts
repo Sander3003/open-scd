@@ -24,11 +24,12 @@ describe('ValidateTemplates', () => {
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
-      await fixture(html`
+      const parent: OpenSCD = await fixture(html`
         <open-scd .doc=${doc}
           ><validate-templates .doc=${doc}></validate-templates
         ></open-scd>
       `);
+      localStorage.setItem('language', 'none');
     });
     it('triggers as newIssuesEvent for detail not containing kind', () => {
       const pluginId = '/src/validators/ValidateTemplates.js';
@@ -100,10 +101,11 @@ describe('ValidateTemplates', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
       const parent: OpenSCD = await fixture(html`
-        <open-scd .doc=${doc}
+        <open-scd .doc=${doc} ?registerTranslation=${false}
           ><validate-templates .doc=${doc}></validate-templates
         ></open-scd>
       `);
+      localStorage.setItem('language', 'none');
 
       element = <ValidateTemplates>parent.querySelector('validate-templates')!;
     });
@@ -111,14 +113,14 @@ describe('ValidateTemplates', () => {
     it('pushes only diag.zeroissues issue to diagnostics when no issues found', async () => {
       await element.validate();
       expect(issueEvent).to.have.been.calledOnce;
-      expect(issueEvent.args[0][0].detail.title).to.contain('No errors');
+      expect(issueEvent.args[0][0].detail.title).to.contain('diag.zeroissues');
     });
 
     it('pushes only diag.missingnsd issue to diagnostics pane for SCL version < 2007B3', async () => {
       element.doc.querySelector('SCL')?.setAttribute('version', '2003');
       await element.validate();
       expect(issueEvent).to.have.been.calledOnce;
-      expect(issueEvent.args[0][0].detail.title).to.contain('Cannot validate');
+      expect(issueEvent.args[0][0].detail.title).to.contain('diag.missingnsd');
     });
 
     it('pushes only diag.missingnsd issue to diagnostics pane for SCL not having version information', async () => {
@@ -126,7 +128,7 @@ describe('ValidateTemplates', () => {
       element.doc.querySelector('SCL')?.removeAttribute('revision');
       await element.validate();
       expect(issueEvent).to.have.been.calledOnce;
-      expect(issueEvent.args[0][0].detail.title).to.contain('Cannot validate');
+      expect(issueEvent.args[0][0].detail.title).to.contain('diag.missingnsd');
     });
 
     it('does not trigger anything for SCL missing DataTypeTemplates', async () => {

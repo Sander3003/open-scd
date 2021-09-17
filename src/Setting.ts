@@ -87,7 +87,7 @@ export function Setting<TBase extends LitElementConstructor>(Base: TBase) {
     constructor(...params: any[]) {
       super(...params);
 
-      registerTranslateConfig({ loader, empty: key => key });
+      registerTranslateConfig({ loader, empty: key => `[${key}]` });
       use(this.settings.language);
     }
 

@@ -30,6 +30,8 @@ describe('ValidateTemplates OpenSCD integration test ', () => {
           rel="stylesheet"
         />
       `);
+      localStorage.setItem('language', 'none');
+
       element = <ValidateTemplates>parent.querySelector('validate-templates')!;
       element.pluginId = '/src/validators/ValidateTemplates.js';
 
@@ -54,7 +56,7 @@ describe('ValidateTemplates OpenSCD integration test ', () => {
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
 
       parent = await fixture(html`
-        <open-scd .doc=${doc}
+        <open-scd .doc=${doc} ?registerTranslation=${false}
           ><validate-templates .doc=${doc}></validate-templates
         ></open-scd>
 
@@ -65,6 +67,8 @@ describe('ValidateTemplates OpenSCD integration test ', () => {
           rel="stylesheet"
         />
       `);
+      localStorage.setItem('language', 'none');
+
       element = <ValidateTemplates>parent.querySelector('validate-templates')!;
       element.pluginId = '/src/validators/ValidateTemplates.js';
 

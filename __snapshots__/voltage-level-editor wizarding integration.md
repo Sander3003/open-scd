@@ -5,36 +5,36 @@
 ```html
 <mwc-dialog
   defaultaction="close"
-  heading="Edit voltage level"
+  heading="[voltagelevel.wizard.title.edit]"
   open=""
 >
   <div id="wizard-content">
     <wizard-textfield
       dialoginitialfocus=""
-      helper="Voltage level name"
+      helper="[voltagelevel.wizard.nameHelper]"
       label="name"
       required=""
-      validationmessage="Required"
+      validationmessage="[textfield.required]"
     >
     </wizard-textfield>
     <wizard-textfield
-      helper="Voltage level description"
+      helper="[voltagelevel.wizard.descHelper]"
       label="desc"
       nullable=""
     >
     </wizard-textfield>
     <wizard-textfield
-      helper="Nominal frequency"
+      helper="[voltagelevel.wizard.nomFreqHelper]"
       label="nomFreq"
       nullable=""
       pattern="\+?([0-9]+(\.[0-9]*)?|\.[0-9]+)"
       required=""
       suffix="Hz"
-      validationmessage="Must not be empty"
+      validationmessage="[textfield.nonempty]"
     >
     </wizard-textfield>
     <wizard-textfield
-      helper="Number of phases"
+      helper="[voltagelevel.wizard.numPhaseHelper]"
       label="numPhases"
       max="255"
       min="1"
@@ -42,23 +42,23 @@
       required=""
       suffix="#"
       type="number"
-      validationmessage="Must not be empty"
+      validationmessage="[textfield.nonempty]"
     >
     </wizard-textfield>
     <wizard-textfield
-      helper="Nominal voltage"
+      helper="[voltagelevel.wizard.voltageHelper]"
       label="Voltage"
       nullable=""
       pattern="((-|\+)?([0-9]+(\.[0-9]*)?|\.[0-9]+))"
       required=""
       unit="V"
-      validationmessage="Must not be empty"
+      validationmessage="[textfield.nonempty]"
     >
     </wizard-textfield>
   </div>
   <mwc-button
     dialogaction="close"
-    label="Cancel"
+    label="[cancel]"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
@@ -66,7 +66,7 @@
   <mwc-button
     dialoginitialfocus=""
     icon="edit"
-    label="Save"
+    label="[save]"
     slot="primaryAction"
     trailingicon=""
   >

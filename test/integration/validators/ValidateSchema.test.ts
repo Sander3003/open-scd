@@ -34,6 +34,8 @@ describe('ValidateSchema plugin', () => {
           rel="stylesheet"
         />
       `);
+      localStorage.setItem('language', 'none');
+
       element = <ValidateSchema>parent.querySelector('validate-schema')!;
       element.pluginId = '/src/validators/ValidateSchema.js';
       await element.requestUpdate();
@@ -52,7 +54,7 @@ describe('ValidateSchema plugin', () => {
         parent.diagnoses.get('/src/validators/ValidateSchema.js')
       );
       expect(lastEntry.length).to.equal(1);
-      expect(lastEntry[0].title).to.contain('validation successful');
+      expect(lastEntry[0].title).to.contain('validator.schema.valid');
     }).timeout(15000);
 
     it('indicates successful schema validation in the log', async () => {
@@ -60,7 +62,7 @@ describe('ValidateSchema plugin', () => {
       await parent.workDone;
       const lastEntry = <LogEntry>parent.history.pop();
       expect(lastEntry.kind).to.equal('info');
-      expect(lastEntry.title).to.contain('validation successful');
+      expect(lastEntry.title).to.contain('validator.schema.valid');
     }).timeout(15000);
   });
 
@@ -85,6 +87,7 @@ describe('ValidateSchema plugin', () => {
           rel="stylesheet"
         />
       `);
+      localStorage.setItem('language', 'none');
 
       element = <ValidateSchema>parent.querySelector('validate-schema')!;
       element.pluginId = '/src/validators/ValidateSchema.js';
@@ -110,7 +113,7 @@ describe('ValidateSchema plugin', () => {
     it('generates error messages in the log', async () => {
       const lastEntry = <LogEntry>parent.history.pop();
       expect(lastEntry.kind).to.equal('warning');
-      expect(lastEntry.title).to.contain('validation failed');
+      expect(lastEntry.title).to.contain('validator.schema.invalid');
     }).timeout(5000);
   });
 });

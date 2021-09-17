@@ -5,20 +5,20 @@
 ```html
 <mwc-dialog
   defaultaction="close"
-  heading="Edit bay"
+  heading="[bay.wizard.title.edit]"
   open=""
 >
   <div id="wizard-content">
     <wizard-textfield
       dialoginitialfocus=""
-      helper="Bay name"
+      helper="[bay.wizard.nameHelper]"
       label="name"
       required=""
-      validationmessage="Required"
+      validationmessage="[textfield.required]"
     >
     </wizard-textfield>
     <wizard-textfield
-      helper="Bay description"
+      helper="[bay.wizard.descHelper]"
       label="desc"
       nullable=""
     >
@@ -26,7 +26,7 @@
   </div>
   <mwc-button
     dialogaction="close"
-    label="Cancel"
+    label="[cancel]"
     slot="secondaryAction"
     style="--mdc-theme-primary: var(--mdc-theme-error)"
   >
@@ -34,7 +34,7 @@
   <mwc-button
     dialoginitialfocus=""
     icon="edit"
-    label="Save"
+    label="[save]"
     slot="primaryAction"
     trailingicon=""
   >
