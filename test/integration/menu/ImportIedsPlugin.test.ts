@@ -197,6 +197,7 @@ describe('ImportIedsPlugin', () => {
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       element.prepareImport(importDoc, doc);
+      await element.updateComplete;
 
       expect(parent.history[0].kind).to.equal('error');
       expect(parent.history[0].title).to.equal('[import.log.missingied]');
@@ -206,6 +207,7 @@ describe('ImportIedsPlugin', () => {
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       element.prepareImport(importDoc, doc);
+      await element.updateComplete;
 
       expect(parent.history[0].kind).to.equal('error');
       expect(parent.history[0].title).to.equal('[import.log.nouniqueied]');
@@ -215,6 +217,7 @@ describe('ImportIedsPlugin', () => {
         .then(response => response.text())
         .then(str => new DOMParser().parseFromString(str, 'application/xml'));
       element.prepareImport(importDoc, doc);
+      await element.updateComplete;
 
       expect(parent.history[0].kind).to.equal('error');
       expect(parent.history[0].title).to.equal('[import.log.parsererror]');
