@@ -14,6 +14,8 @@ import { getAttachedIeds } from './zeroline/foundation.js';
 
 import './zeroline/substation-editor.js';
 import './zeroline/ied-editor.js';
+import './zeroline/function-editor.js';
+
 import { Settings } from './Setting.js';
 import { wizards } from './wizards/wizard-library.js';
 import { communicationMappingWizard } from './wizards/commmap-wizards.js';

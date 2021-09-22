@@ -127,6 +127,9 @@ export class BayEditor extends LitElement {
       ${this.renderHeader()}
       <div>
         ${this.renderIedContainer()}
+        ${Array.from(this.element.querySelectorAll('Function')).map(
+          func => html`<function-editor .element=${func}></function-editor>`
+        )}
         <div id="ceContainer">
           ${Array.from(
             this.element?.querySelectorAll(

@@ -139,7 +139,11 @@ export class SubstationEditor extends LitElement {
   render(): TemplateResult {
     return html`
       <section tabindex="0">
-        ${this.renderHeader()} ${this.renderIedContainer()}
+        ${this.renderHeader()}
+        ${Array.from(this.element.querySelectorAll('Function')).map(
+          func => html`<function-editor .element=${func}></function-editor>`
+        )}
+        ${this.renderIedContainer()}
         ${Array.from(this.element.querySelectorAll(selectors.VoltageLevel)).map(
           voltageLevel =>
             html`<voltage-level-editor

@@ -139,6 +139,9 @@ export class VoltageLevelEditor extends LitElement {
   render(): TemplateResult {
     return html`<section tabindex="0">
       ${this.renderHeader()} ${this.renderIedContainer()}
+      ${Array.from(this.element.querySelectorAll('Function')).map(
+        func => html`<function-editor .element=${func}></function-editor>`
+      )}
       <div id="bayContainer">
         ${Array.from(this.element?.querySelectorAll(selectors.Bay) ?? []).map(
           bay => html`<bay-editor
