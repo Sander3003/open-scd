@@ -13,6 +13,7 @@ import {
   startMove,
   styles,
   cloneSubstationElement,
+  renderPtrContainer
 } from './foundation.js';
 import './bay-editor.js';
 import { SubstationEditor } from './substation-editor.js';
@@ -139,6 +140,7 @@ export class VoltageLevelEditor extends LitElement {
   render(): TemplateResult {
     return html`<section tabindex="0">
       ${this.renderHeader()} ${this.renderIedContainer()}
+      ${renderPtrContainer(this.element)}
       <div id="bayContainer">
         ${Array.from(this.element?.querySelectorAll(selectors.Bay) ?? []).map(
           bay => html`<bay-editor

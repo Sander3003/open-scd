@@ -8,7 +8,7 @@ import {
 } from 'lit-element';
 import { translate } from 'lit-translate';
 
-import { startMove, styles, cloneSubstationElement } from './foundation.js';
+import { startMove, styles, cloneSubstationElement, renderPtrContainer } from './foundation.js';
 import { newActionEvent, newWizardEvent } from '../foundation.js';
 
 import { wizards } from '../wizards/wizard-library.js';
@@ -127,6 +127,7 @@ export class BayEditor extends LitElement {
       ${this.renderHeader()}
       <div>
         ${this.renderIedContainer()}
+        ${renderPtrContainer(this.element)}
         <div id="ceContainer">
           ${Array.from(
             this.element?.querySelectorAll(

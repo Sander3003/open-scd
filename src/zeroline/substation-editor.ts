@@ -15,6 +15,7 @@ import {
   selectors,
   startMove,
   styles,
+  renderPtrContainer
 } from './foundation.js';
 
 import './voltage-level-editor.js';
@@ -140,6 +141,7 @@ export class SubstationEditor extends LitElement {
     return html`
       <section tabindex="0">
         ${this.renderHeader()} ${this.renderIedContainer()}
+        ${renderPtrContainer(this.element)}
         ${Array.from(this.element.querySelectorAll(selectors.VoltageLevel)).map(
           voltageLevel =>
             html`<voltage-level-editor

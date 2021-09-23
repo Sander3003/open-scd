@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css, html, TemplateResult } from 'lit-element';
 
 import {
   EditorAction,
@@ -98,6 +98,15 @@ export function getAttachedIeds(
 
     return attachedIeds(element, ieds);
   };
+}
+
+export function renderPtrContainer(element: Element) : TemplateResult {
+  const powerTransformers = Array.from(element.children).filter(child => child.tagName === 'PowerTransformer');
+  return powerTransformers?.length > 0
+  ? html `<div id="ptrcontainer">
+           ${powerTransformers.map(ptr => html`<power-transformer-editor .element=${ptr}></power-transformer-editor>`)}        
+          </div>` 
+          : html``; 
 }
 
 export type ElementEditor = Element & {
@@ -304,6 +313,14 @@ export const styles = css`
     display: grid;
     grid-gap: 12px;
     padding: 8px 12px 16px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(64px, auto));
+  }
+
+  #ptrcontainer {
+    display: grid;
+    grid-gap: 12px;
+    padding: 12px;
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fit, minmax(64px, auto));
   }

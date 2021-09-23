@@ -6,6 +6,7 @@ import {
   editConductingEquipmentWizard,
 } from './conductingequipment.js';
 import { lNodeWizard } from './lnode.js';
+import { createPowerTransformerWizard, editPowerTransformerWizard } from './powertransformer.js';
 import { createSubstationWizard, substationEditWizard } from './substation.js';
 import {
   voltageLevelCreateWizard,
@@ -338,8 +339,8 @@ export const wizards: Record<
     create: emptyWizard,
   },
   PowerTransformer: {
-    edit: emptyWizard,
-    create: emptyWizard,
+    edit: editPowerTransformerWizard,
+    create: createPowerTransformerWizard,
   },
   Private: {
     edit: emptyWizard,

@@ -67,8 +67,8 @@ export class ActionComponent extends LitElement {
         }
         </style>
       </slot>
-      <h4 class="footer ${this.trimText}">${this.name}</h4>
-    </div>`;
+    </div>
+    <h4 class="footer ${this.trimText}">${this.name}</h4>`;
   }
 
   static styles = css`
