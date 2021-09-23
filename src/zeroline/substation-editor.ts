@@ -1,21 +1,25 @@
+import { SingleSelectedEvent } from '@material/mwc-list/mwc-list-foundation';
+import { ListItem } from '@material/mwc-list/mwc-list-item';
+import { Menu } from '@material/mwc-menu';
 import {
   css,
   customElement,
   html,
   LitElement,
   property,
+  query,
   TemplateResult,
 } from 'lit-element';
 import { translate } from 'lit-translate';
-import { newActionEvent, newWizardEvent } from '../foundation.js';
-import { wizards } from '../wizards/wizard-library.js';
+import { newActionEvent, newWizardEvent, SCLTag, tags } from '../foundation.js';
+import { emptyWizard, wizards } from '../wizards/wizard-library.js';
 
 import {
   cloneSubstationElement,
   selectors,
   startMove,
   styles,
-  renderPtrContainer
+  renderPtrContainer,
 } from './foundation.js';
 
 import './voltage-level-editor.js';
@@ -44,6 +48,13 @@ export class SubstationEditor extends LitElement {
   getAttachedIeds?: (element: Element) => Element[] = () => {
     return [];
   };
+
+  @query('#addmenu') addMenu!: Menu;
+
+  openCreateWizard(tag: SCLTag): void {
+    const wizard = wizards[tag].create(this.element);
+    if (wizard) this.dispatchEvent(newWizardEvent(wizard));
+  }
 
   /** Opens a [[`WizardDialog`]] for editing [[`element`]]. */
   openEditWizard(): void {
@@ -95,8 +106,28 @@ export class SubstationEditor extends LitElement {
               : html`<abbr title="${translate('add')}">
                     <mwc-icon-button
                       icon="playlist_add"
-                      @click=${() => this.openVoltageLevelWizard()}
+                      @click=${() => (this.addMenu.open = true)}
                     ></mwc-icon-button>
+                            <mwc-menu id="addmenu" @selected=${(
+                              e: SingleSelectedEvent
+                            ) => {
+                              const childTag = (<ListItem>(
+                                (<Menu>e.target).selected
+                              )).value;
+
+                              this.openCreateWizard(<SCLTag>childTag);
+                            }} >
+                      ${Array.from(
+                        tags[<SCLTag>this.element.tagName].children
+                      ).map(
+                        child =>
+                          html`<mwc-list-item
+                            value="${child}"
+                            ?disabled=${wizards[child].create === emptyWizard}
+                            ><slot>${child}</slot></mwc-list-item
+                          >`
+                      )}
+                    </menu>
                   </abbr>
                   <nav>
                     <abbr title="${translate('lnode.tooltip')}">

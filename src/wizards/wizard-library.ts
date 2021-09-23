@@ -6,7 +6,10 @@ import {
   editConductingEquipmentWizard,
 } from './conductingequipment.js';
 import { lNodeWizard } from './lnode.js';
-import { createPowerTransformerWizard, editPowerTransformerWizard } from './powertransformer.js';
+import {
+  createPowerTransformerWizard,
+  editPowerTransformerWizard,
+} from './powertransformer.js';
 import { createSubstationWizard, substationEditWizard } from './substation.js';
 import {
   voltageLevelCreateWizard,
@@ -14,8 +17,7 @@ import {
 } from './voltagelevel.js';
 
 type SclElementWizard = (element: Element) => Wizard | undefined;
-
-function emptyWizard(): Wizard | undefined {
+export function emptyWizard(): Wizard | undefined {
   return;
 }
 
