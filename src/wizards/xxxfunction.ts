@@ -13,7 +13,6 @@ import {
 import {
   renderChildElements,
   selectElementWizard,
-  updateXxxFunctionAction,
 } from './foundation/actions.js';
 
 function render(
@@ -96,7 +95,7 @@ export function editXxxFunctionWizard(element: Element): Wizard | undefined {
       primary: {
         label: get('save'),
         icon: 'save',
-        action: updateXxxFunctionAction(element),
+        action: createXxxFunctionAction(element),
       },
       content: [...render(name, desc, type), ...renderChildElements(element)],
     },
